@@ -1,0 +1,608 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Umrbek {
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(90deg,#00ff87, #60efff, #a855f7, #00ff87);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
+.home{
+  width: 600px;
+  height: 600px;
+  background-color: rgb(8, 35, 122);
+  text-align: center;
+  padding-left: 60px;
+  padding-top: 60px;
+  margin: auto;
+}
+.home h1{
+  font-size: 40px;
+  color: azure;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  transition: .3s ease-in-out;
+}
+.home p{
+  color: azure;
+  font-size: 23px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.home h1:hover{
+  color: #09ff00;
+}
+.home img{
+  width: 300px;
+}
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons i {
+    color: white; /* Ikonka rangi */
+    font-size: 30px; /* Hajmi */
+    transition: .3s ease-in-out;
+}
+
+.social-icons i:hover {
+    color: #09ff00; /* Ustiga borganda sarg'ish rang (Barcelona uslubida) */
+}
+.nav {
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: 80px;
+    background: rgb(11, 49, 161); /* Glassmorphism fon */
+    backdrop-filter: blur(12px); /* Orqa fonni xiralashtirish */
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid rgb(35, 13, 160); /* Nozik sariq chegara */
+    box-shadow: 0 8px 32px 20px rgba(7, 9, 122, 0.3);
+    transition: all 0.4s ease;
+}
+.nav a{
+  color: azure;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+.pro-about {
+  padding: 120px 0;
+  background: #0a236e; /* To'q ko'k Barselona foni */
+  color: #fff;
+  overflow: hidden;
+}
+
+.container { width: 85%; margin: 0 auto; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Karta dizayni */
+.main-card { position: relative; z-index: 1; }
+
+.card-inner {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.image-wrapper img {
+  width: 100%;
+  border-radius: 30px;
+  border: 2px solid rgba(241, 196, 15, 0.2); /* Nozik sariq chegara */
+  transition: 0.5s ease;
+}
+
+.main-card:hover img { transform: scale(1.03); border-color: #f1c40f; }
+
+/* Floating Badge */
+.floating-badge {
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+  background: #f1c40f;
+  color: #0a236e;
+  padding: 15px 25px;
+  border-radius: 20px;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(241, 196, 15, 0.4);
+}
+
+/* Matn va Stats */
+.top-label { color: #f1c40f; letter-spacing: 4px; font-size: 12px; text-transform: uppercase; }
+
+.main-name { font-size: 52px; margin: 15px 0; font-weight: 800; }
+.main-name span { color: #f1c40f; }
+
+.description { color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 30px; font-size: 17px; }
+
+.tag {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  color: #f1c40f; /* Matn rangi */
+  background: transparent; /* Fon boshida shaffof */
+  border: 1px solid #f1c40f;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden; /* Ichidagi ::before chiqib ketmasligi uchun */
+  transition: color 0.4s ease; /* Matn rangi o'zgarishi */
+  z-index: 1;
+}
+
+.stats-row { display: flex; gap: 40px; margin: 40px 0; align-items: center; }
+.stat-card h4 { font-size: 34px; color: #f1c40f; margin: 0; }
+.v-line { width: 1px; height: 50px; background: rgba(255,255,255,0.1); }
+
+/* Tugmalar */
+.btn-pro {
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.primary {
+  position: relative;
+  padding: 14px 35px;
+  background: transparent; /* Boshida fon shaffof */
+  color: #f1c40f; /* Matn sariq */
+  border: 2px solid #f1c40f;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden; /* Ichidagi qatlam chiqib ketmasligi uchun */
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Chap tomonda yashirin */
+  width: 100%;
+  height: 100%;
+  background: #f1c40f; /* To'ladigan sariq rang */
+  transition: left 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+}
+.primary:hover {
+  color: #0a236e; /* Hoverda matn ko'k bo'ladi */
+  box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3); /* Neon soya */
+  transform: translateY(-3px); /* Ozgina yuqoriga ko'tarilish */
+}
+.primary:hover::before {
+  left: 0; /* Fonni o'ngga surish */
+}
+.primary:active {
+  transform: translateY(-1px);
+}
+.outline { background: transparent; border: 2px solid #f1c40f; color: #f1c40f; }
+
+
+
+/* Mobil moslashuv */
+@media (max-width: 992px) {
+  .about-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+  .stats-row { justify-content: center; }
+  .floating-badge { right: 50%; transform: translateX(50%); }
+}
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Dastlab chapda yashirin turadi */
+  width: 100%;
+  height: 100%;
+  background: #f1c40f; /* Hover bo'lganda to'ladigan rang */
+  transition: left 0.4s cubic-bezier(0.7, 0, 0.2, 1); /* Silliq harakat */
+  z-index: -1; /* Matnning orqasiga o'tkazamiz */
+}
+.tag:hover {
+  color: #0a236e; /* Hoverda matn rangi to'q ko'k bo'ladi */
+}
+.tag:hover::before {
+  left: 0; /* Hoverda fon chapdan o'ngga suriladi */
+}
+:root {
+  --clr-1: #00c6ff;
+  --clr-2: #0072ff;
+  --clr-3: #f093fb;
+  --clr-4: #f5576c;
+}
+
+.btn-pro {
+  position: relative;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: #111; /* Asosiy fon */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Tugma ichidagi aylanuvchi gradient foni */
+.btn-pro::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-1)
+  );
+  animation: rotate-gradient 4s linear infinite;
+  z-index: 0;
+  opacity: 0.4; /* Oddiy holatda biroz xira */
+  transition: opacity 0.4s ease;
+}
+
+/* Ustki qatlam (Shishasimon effekt berish uchun) */
+.btn-pro::after {
+  content: '';
+  position: absolute;
+  inset: 2px; /* Border qalinligi kabi ishlaydi */
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 48px;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2; /* Matn hamma narsadan ustida */
+  background: linear-gradient(to right, #fff, #bbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- HOVER EFFEKTI --- */
+.btn-pro:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 198, 255, 0.4);
+}
+
+.btn-pro:hover::before {
+  opacity: 1; /* Ranglar yorqinlashadi */
+  animation-duration: 1.5s; /* Tezlashadi */
+}
+
+.btn-pro:hover::after {
+  background: rgba(20, 20, 20, 0.7); /* Shisha shaffoflashadi */
+}
+
+/* --- ACTIVE (BOSILGANDA) EFFEKTI --- */
+.btn-pro:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.2);
+}
+
+/* --- ANIMATSIYA --- */
+@keyframes rotate-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.btn-ultimate {
+  --border-width: 2px;
+  --radius: 12px;
+  --bg-color: #0f172a; /* To'q ko'k-qora fon */
+  --glow-color: #6366f1; /* Neon binafsha */
+  
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden; /* Nur chiqib ketmasligi uchun */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* 1-Qatlam: Aylanuvchi Nurli Chegara (The Border Beam) */
+.btn-ultimate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 20%,
+    var(--glow-color) 45%,
+    #2dd4bf 50%, /* Turkua chayqalishi */
+    var(--glow-color) 55%,
+    transparent 80%
+  );
+  animation: rotate-beam 3s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.3; /* Oddiy holatda sokin nur */
+}
+
+/* 2-Qatlam: Ichki Fon (Mask) */
+.btn-ultimate::after {
+  content: '';
+  position: absolute;
+  inset: var(--border-width); /* Border qalinligini tashlab ketadi */
+  background: var(--bg-color);
+  border-radius: calc(var(--radius) - var(--border-width));
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* 3-Qatlam: Hoverdagi Soft Glow (Yumshoq yorug'lik) */
+.glow-container {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%), 
+    rgba(99, 102, 241, 0.15) 0%, 
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 3; /* Hamma narsadan ustida */
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* --- INTERAKTIV EFFEKTLAR --- */
+
+/* Hover holati */
+.btn-ultimate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px var(--glow-color);
+}
+
+.btn-ultimate:hover::before {
+  opacity: 1;
+  animation-duration: 1.5s; /* Tezlashadi */
+}
+
+.btn-ultimate:hover .glow-container {
+  opacity: 1;
+}
+
+.btn-ultimate:hover .btn-text {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Active (Bosilganda) */
+.btn-ultimate:active {
+  transform: scale(0.96) translateY(0);
+  filter: brightness(1.3);
+}
+
+/* Nurli chegara animatsiyasi */
+@keyframes rotate-beam {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* Asosiy rasmning joylashuvi */
+.img-wrapper {
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  display: inline-block;
+}
+
+.home .img {
+  width: 250px; /* O'zingizga mos o'lcham */
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+/* KATTALASHGAN HOLAT (ACTIVE) */
+.img-wrapper.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Orqa fon qorayishi */
+  backdrop-filter: blur(12px); /* Xiralashtirish */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  margin: 0;
+}
+
+.img-wrapper.active .img {
+  width: 80vmin; /* Ekranga qarab moslashuvchi o'lcham */
+  height: 80vmin;
+  border-radius: 20px; /* Kattalashganda biroz kvadratroq bo'lishi chiroyli chiqadi */
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Yopish tugmasi (X) */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 50px;
+  color: white;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #00ff87;
+  transform: rotate(90deg);
+}
+
+/* Animatsiya paydo bo'lishi */
+.img-wrapper.active .img {
+  animation: zoomIn 0.4s ease-out;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* Skills.css */
+.skills-container {
+  padding: 60px 20px;
+  background-color: #001f6d; /* To'q ko'k fon */
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #ffcc00; /* Sariq rang */
+  display: inline-block;
+  position: relative;
+}
+
+.skills-title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: #ffcc00;
+  margin: 10px auto 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.skill-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.skill-percent {
+  color: #ffcc00;
+  font-size: 0.9rem;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.1, 0.42, 0.41, 1);
+}
+.btnn{
+  width: 120px;
+  height: 60px;
+  color: azure;
+  background-color: #111;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 900;
+}
+.btn-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.divv h2{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: azure;
+}
