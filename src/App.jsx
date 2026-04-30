@@ -3,6 +3,7 @@ import Homepage from './Homepage'
 import Ap from './ap'
 import Skills from './Skills'
 import TelegramContact from './Tgcontact'
+import CountryList from './Flags'
 
 function App(){
   return(
@@ -12,7 +13,8 @@ function App(){
       <Link to='/Homepage'>Asosiy</Link>
       <Link to='/Skills'>Dasturlash</Link>
       <Link to='/Con'>Bog`lanish</Link>
-      <Link to='/hikmat'>Demo loyiham</Link>
+      <Link to='/hikmat'>Quote</Link>
+      <Link to='/flags'>Flags</Link>
     </nav>
 
     <div style={{padding:'20px'}}>
@@ -21,6 +23,7 @@ function App(){
         <Route path='/Skills' element={<Skills />} />
         <Route path='/Con' element={<TelegramContact />} />
         <Route path='/hikmat' element={<Ap />} />
+        <Route path='/flags' element={<CountryList />} />
       </Routes>
     </div>
     </BrowserRouter>

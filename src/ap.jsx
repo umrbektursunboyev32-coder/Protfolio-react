@@ -34,18 +34,10 @@ function Ap() {
     getNewQuote()
   }, [])
 
-  useEffect(() => {
-    if(quote) {
-      const ranglar = ['#1abc9c', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c']
-      const tasodifiyRang = ranglar[Math.floor(Math.random() * ranglar.length)]
-      document.body.style.backgroundColor = tasodifiyRang
 
-      document.body.style.transition = '0.5'
-    }
-  }, [quote])
   return (
     <div style={{maxWidth:'600px', margin:'50px auto', textAlign:'center'}}>
-        <h1 style={{color:'azure', fontFamily:'monospace', fontWeight:'bold'}}>Bu mening demo <br /> <br /> loyiham</h1>
+        <h1 style={{color:'#000', fontFamily:'monospace', fontWeight:'bold'}}>Bu mening demo <br /> <br /> loyiham</h1>
       {loading && <p>Yuklanmoqda...</p>}
 
       {error && <p style={{color:'red'}}>{error}</p>}
@@ -54,8 +46,8 @@ function Ap() {
         <QuoteCard matn={quote.content} muallif={quote.author} />
       )}
 
-      <button class="btn-pro">
-  <span class="btn-text" onClick={getNewQuote}>Yangi hikmat</span>
+      <button className="btn-pro">
+  <span className="btn-text" onClick={getNewQuote}>Yangi hikmat</span>
 </button>   
     </div>
   )
