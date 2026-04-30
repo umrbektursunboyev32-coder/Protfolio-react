@@ -34,7 +34,7 @@ const CountryList = () => {
         getCountries()
     }, [])
 
-    if (loading) return <h2 style={{textAlign:'center'}}>Dunyo Xaritasi Yuklanmoqda ...</h2>
+    if (loading) return <h2 style={{textAlign:'center'}}>Dunyo Xaritasi Yuklanmoqda   ffffff...</h2>
     // if (error) return <h2 style={{color:'red', textAlign:'center'}}>Xato: yana {error}</h2>
 
     return(
