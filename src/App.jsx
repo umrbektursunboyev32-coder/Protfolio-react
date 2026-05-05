@@ -4,6 +4,7 @@ import Ap from './ap'
 import Skills from './Skills'
 import TelegramContact from './Tgcontact'
 import CountryList from './Flags'
+import CurrencyConverter from './Pul'
 
 function App(){
   return(
@@ -15,6 +16,7 @@ function App(){
       <Link to='/Con'>Bog`lanish</Link>
       <Link to='/hikmat'>Quote</Link>
       <Link to='/flags'>Flags</Link>
+      <Link to='/pull'>Valyuta</Link>
     </nav>
 
     <div style={{padding:'20px'}}>
@@ -24,6 +26,7 @@ function App(){
         <Route path='/Con' element={<TelegramContact />} />
         <Route path='/hikmat' element={<Ap />} />
         <Route path='/flags' element={<CountryList />} />
+        <Route path='/pull' element={<CurrencyConverter />} />
       </Routes>
     </div>
     </BrowserRouter>
