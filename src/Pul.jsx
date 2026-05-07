@@ -13,7 +13,10 @@ function CurrencyConverter(){
             try{
                 const response = await axios.get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/')
                 const uzs = {Ccy: 'UZS', Rate:'1', CcyNm_UZ:'O`zbek so`mi'}
-                setRates([uzs, ...response.data])
+                const btc = {Ccy: 'BTC', Rate:'981888417.80', CcyNm_UZ:'Bitcoin'}
+                const eth = {Ccy: 'ETH', Rate:'28246419.80', CcyNm_UZ:'Ethereum'}
+                const usdt = {Ccy: 'USDT', Rate:'12121.75', CcyNm_UZ:'Tether'}
+                setRates([uzs, btc, eth, ...response.data, usdt])
             }catch(error){
                 console.error('XATOLIK:', error)
             }
