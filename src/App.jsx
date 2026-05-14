@@ -5,6 +5,7 @@ import Skills from './Skills'
 import TelegramContact from './Tgcontact'
 import CountryList from './Flags'
 import CurrencyConverter from './Pul'
+import MovieSearch from './kino'
 
 function App(){
   return(
@@ -17,6 +18,7 @@ function App(){
       <Link to='/hikmat'>Quote</Link>
       <Link to='/flags'>Flags</Link>
       <Link to='/pull'>Valyuta</Link>
+      <Link to='/kino'>Kinolar</Link>
     </nav>
 
     <div style={{padding:'20px'}}>
@@ -27,6 +29,7 @@ function App(){
         <Route path='/hikmat' element={<Ap />} />
         <Route path='/flags' element={<CountryList />} />
         <Route path='/pull' element={<CurrencyConverter />} />
+        <Route path='/kino' element={<MovieSearch />} />
       </Routes>
     </div>
     </BrowserRouter>

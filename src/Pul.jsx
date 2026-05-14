@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import './Pul.css'
 
 function CurrencyConverter(){
     const [rates, setRates] = useState([])
@@ -29,43 +30,56 @@ function CurrencyConverter(){
             const fromRate = rates.find(r => r.Ccy === fromCurrency)?.Rate
             const toRate = rates.find(r => r.Ccy === toCurrency)?.Rate
 
-
             const calc = (amount * fromRate) / toRate
             setResult(calc.toFixed(2))
         }
-    }, [amount,fromCurrency,toCurrency,rates,])
+    }, [amount,fromCurrency,toCurrency,rates])
 
     return(
-        <div style={{padding:'30px', maxWidth:'500px', margin:'0 auto', background:'#f4f7f6', borderRadius:'15px', boxShadow:'0 4px 8px rgba(0,0,0,0.1)'}}>
-            <h2 style={{textAlign:'center'}}>Valyuta Konverti</h2>
+        <div className="converter-container">
+            <h2 className="converter-title">Valyuta Konvertori</h2>
 
-            <div style={{marginBottom:'20px'}}>
-                <label>Miqdorni kiriting</label>
+            <div className="input-group">
+                <label className='label'>Miqdorni kiriting</label>
                 <input
-                 type="number"
-                 value={amount}
-                 onChange={(e) => setAmout(e.target.value)} 
-                 style={{width:'100%', padding:'10px', marginTop:'5px', borderRadius:'5px', border:'1px solid #ccc'}}/>
+                    className="styled-input"
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmout(e.target.value)} 
+                />
             </div>
-            <div style={{display:'flex', justifyContent:'space-between', gap:'10px'}}>
-                <div style={{flex:1}}>
-                    <label>Dan:</label>
-                    <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)}
-                        style={{width:'100%', padding:'10px', borderRadius:'5px'}}>
+
+            <div className="flex-row">
+                <div className="flex-item">
+                    <div className="input-group1">
+                        <label className='label2'>Dan:</label>
+                        <select 
+                            className="styled-select"
+                            value={fromCurrency} 
+                            onChange={(e) => setFromCurrency(e.target.value)}
+                        >
                             {rates.map(r => <option key={r.Ccy} value={r.Ccy}>{r.Ccy} - {r.CcyNm_UZ}</option>)}
                         </select>
+                    </div>
                 </div>
-                <div style={{flex:1}}>
-                    <label>Ga:</label>
-                    <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}
-                        style={{width:'100%', padding:'10px', borderRadius:'5px'}}>
+
+                <div className="flex-item">
+                    <div className="input-group2">
+                        <label className='label2'>Ga:</label>
+                        <select 
+                            className="styled-select"
+                            value={toCurrency} 
+                            onChange={(e) => setToCurrency(e.target.value)}
+                        >
                              {rates.map(r => <option key={r.Ccy} value={r.Ccy}>{r.Ccy} - {r.CcyNm_UZ}</option>)}
                         </select>
+                    </div>
                 </div>
             </div>
-            <div style={{marginTop:'30px', textAlign:'center', padding:'20px', background:'#fff', borderRadius:'10px'}}>
-                <h3 style={{margin:0}}>Natija:</h3>
-                <p style={{fontSize:'24px', fontWeight:'bold', color:'#2ecc71'}}>
+
+            <div className="result-section">
+                <h3 className="result-title">Natija:</h3>
+                <p className="result-value">
                     {amount} {fromCurrency} = {result} {toCurrency}
                 </p>
             </div>
@@ -73,4 +87,4 @@ function CurrencyConverter(){
     )
 }
 
-export default CurrencyConverter
+export default CurrencyConverter;
